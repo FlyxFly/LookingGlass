@@ -105,7 +105,9 @@ if (file_exists('LookingGlass/Config.php')) {
                 </div>
                 <select name="cmd" class="input-medium" style="margin-left: 5px;">
                   <option value="host">host</option>
+                  <option value="besttrace">besttrace</option>
                   <option value="mtr">mtr</option>
+                  
                   <?php if (!empty($ipv6)) { echo '<option value="mtr6">mtr6</option>'; } ?>
                   <option value="ping" selected="selected">ping</option>
                   <?php if (!empty($ipv6)) { echo '<option value="ping6">ping6</option>'; } ?>

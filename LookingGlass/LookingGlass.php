@@ -52,6 +52,24 @@ class LookingGlass
     }
 
     /**
+     * Execute a 'besttrace' command against given host:
+     * Mtr combines the functionality of the traceroute and ping programs in a
+     * single network diagnostic tool.
+     *
+     * @param  string $host
+     *   IP/URL to perform command against
+     * @return boolean
+     *   True on success
+     */
+    public function besttrace($host)
+    {
+        if ($host = $this->validate($host)) {
+            return $this->procExecute('./besttrace -q 1 -n ', $host);
+        }
+        return false;
+    }
+
+    /**
      * Execute a 'mtr6' command against given host:
      * Mtr combines the functionality of the traceroute and ping programs in a
      * single network diagnostic tool.
